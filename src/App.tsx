@@ -1,5 +1,7 @@
 import { SiGithub, SiYoutube } from "react-icons/si";
 
+import Section from "./components/site/Section";
+
 function App() {
   return (
     <div className="relative min-h-screen bg-white">
@@ -55,51 +57,15 @@ function App() {
             <p className="text-lg text-gray-800">Component description</p>
           </header>
           <div className="space-y-10 md:space-y-16">
-            {/* Content section */}
-            <div>
-              {/* Section heading */}
-              <h2 className="text-lg font-bold text-gray-800">
-                Section heading
-              </h2>
+            <Section description="Section description" title="Section title">
+              <div>component 1</div>
+              <div>component 2</div>
+            </Section>
 
-              {/* Section description  */}
-              <p className="mt-1 text-gray-600">Section description text</p>
-
-              {/* Section preview area */}
-              <div className="mt-3">
-                <div className="flex flex-col rounded-xl border p-6 shadow-sm">
-                  <div className="flex flex-wrap gap-2">
-                    {/* The preview stuff aka the child component hat get yeeted here */}
-                    <div className="bg-blue-500/50 p-3">component 1</div>
-                    <div className="bg-blue-500/50 p-3">component 2</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Content section */}
-            <div>
-              <div>
-                {/* Section heading */}
-                <h2 className="text-lg font-bold text-gray-800">
-                  Section heading
-                </h2>
-
-                {/* Section description  */}
-                <p className="mt-1 text-gray-600">Section description text</p>
-
-                {/* Section preview area */}
-                <div className="mt-3">
-                  <div className="flex flex-col rounded-xl border p-6 shadow-sm">
-                    <div className="flex flex-wrap gap-2">
-                      {/* The preview stuff aka the child component hat get yeeted here */}
-                      <div className="bg-blue-500/50 p-3">component 1</div>
-                      <div className="bg-blue-500/50 p-3">component 2</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Section description="Section description" title="Section title">
+              <div>component 1</div>
+              <div>component 2</div>
+            </Section>
           </div>
 
           {/* Content container */}
@@ -110,75 +76,15 @@ function App() {
             <p className="text-lg text-gray-800">Component description</p>
           </header>
           <div className="space-y-10 md:space-y-16">
-            {/* Content section */}
-            <div>
-              {/* Section heading */}
-              <h2 className="text-lg font-bold text-gray-800">
-                Section heading
-              </h2>
+            <Section description="Section description" title="Section title">
+              <div>component 1</div>
+              <div>component 2</div>
+            </Section>
 
-              {/* Section description  */}
-              <p className="mt-1 text-gray-600">Section description text</p>
-
-              {/* Section preview area */}
-              <div className="mt-3">
-                <div className="flex flex-col rounded-xl border p-6 shadow-sm">
-                  <div className="flex flex-wrap gap-2">
-                    {/* The preview stuff aka the child component hat get yeeted here */}
-                    <div className="bg-blue-500/50 p-3">component 1</div>
-                    <div className="bg-blue-500/50 p-3">component 2</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Content section */}
-            <div>
-              <div>
-                {/* Section heading */}
-                <h2 className="text-lg font-bold text-gray-800">
-                  Section heading
-                </h2>
-
-                {/* Section description  */}
-                <p className="mt-1 text-gray-600">Section description text</p>
-
-                {/* Section preview area */}
-                <div className="mt-3">
-                  <div className="flex flex-col rounded-xl border p-6 shadow-sm">
-                    <div className="flex flex-wrap gap-2">
-                      {/* The preview stuff aka the child component hat get yeeted here */}
-                      <div className="bg-blue-500/50 p-3">component 1</div>
-                      <div className="bg-blue-500/50 p-3">component 2</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Content section */}
-            <div>
-              <div>
-                {/* Section heading */}
-                <h2 className="text-lg font-bold text-gray-800">
-                  Section heading
-                </h2>
-
-                {/* Section description  */}
-                <p className="mt-1 text-gray-600">Section description text</p>
-
-                {/* Section preview area */}
-                <div className="mt-3">
-                  <div className="flex flex-col rounded-xl border p-6 shadow-sm">
-                    <div className="flex flex-wrap gap-2">
-                      {/* The preview stuff aka the child component hat get yeeted here */}
-                      <div className="bg-blue-500/50 p-3">component 1</div>
-                      <div className="bg-blue-500/50 p-3">component 2</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Section description="Section description" title="Section title">
+              <div>component 1</div>
+              <div>component 2</div>
+            </Section>
           </div>
         </div>
       </main>
