@@ -201,11 +201,17 @@ function App() {
         </Section>
 
         <Section title="Label" description="Input with a label.">
-          {/* Basic inputs */}
+          {/* Basic input with label */}
+          <Input type="email" label="Email" placeholder="you@site.com" />
         </Section>
 
         <Section title="Description" description="Input with a description.">
-          {/* Basic inputs */}
+          {/* Basic input with description*/}
+          <Input
+            type="password"
+            description="we'll totally never share your password, friend"
+            placeholder="secret password"
+          />
         </Section>
       </Container>
     </Layout>

@@ -24,12 +24,26 @@ const input = cva(
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
-    VariantProps<typeof input> {}
+    VariantProps<typeof input> {
+  label?: string;
+  description?: string;
+}
 
-export const Input: React.FC<InputProps> = ({ className, ...props }) => {
+export const Input: React.FC<InputProps> = ({
+  className,
+  label,
+  description,
+  ...props
+}) => {
   return (
-    <div>
+    <div className="max-w-sm space-y-3">
+      {label && (
+        <label className="mb-2 block text-sm font-medium">{label}</label>
+      )}
       <input className={twMerge(input({ className }))} {...props} />
+      {description && (
+        <p className="mt-2 text-sm text-gray-500">{description}</p>
+      )}
     </div>
   );
 };
