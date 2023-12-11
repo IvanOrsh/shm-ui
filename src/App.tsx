@@ -2,6 +2,7 @@ import { SiNextdotjs, SiVite } from "react-icons/si";
 
 import { Button } from "./components/library/Button";
 import { BlockLinkCard, ContentCard } from "./components/library/Card";
+import { Input } from "./components/library/Input";
 import Container from "./components/site/Container";
 import Layout from "./components/site/Layout";
 import Section from "./components/site/Section";
@@ -143,7 +144,7 @@ function App() {
 
         <Section
           title="Simple with a header and footer"
-          description="Add an optional header and/or footer within a card"
+          description="Add an optional header and/or footer within a card/"
         >
           {/* Simple card with header */}
           <ContentCard
@@ -183,6 +184,28 @@ function App() {
           <BlockLinkCard url="https://nextjs.org/" text="NextJS">
             <SiNextdotjs className="h-10 w-10" />
           </BlockLinkCard>
+        </Section>
+      </Container>
+
+      {/* Inputs */}
+      <Container
+        title="Inputs"
+        description="An input is a widget that allows users to provide data or specify options, which can be submitted as part of a form or used to interact with an manipulate content on a web page."
+      >
+        <Section title="Basic" description="Basic inputs with a placeholder.">
+          {/* Basic input */}
+          <Input type="text" placeholder="Basic input: start typing here" />
+
+          {/* Disabled input */}
+          <Input type="text" disabled placeholder="Disabled input" />
+        </Section>
+
+        <Section title="Label" description="Input with a label.">
+          {/* Basic inputs */}
+        </Section>
+
+        <Section title="Description" description="Input with a description.">
+          {/* Basic inputs */}
         </Section>
       </Container>
     </Layout>
