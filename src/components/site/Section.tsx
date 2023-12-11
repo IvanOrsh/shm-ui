@@ -1,4 +1,4 @@
-import { Children, PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 
 type SectionProps = {
   title: string;
@@ -23,13 +23,7 @@ export default function Section(props: PropsWithChildren<SectionProps>) {
           <div className="flex flex-col rounded-xl border p-6 shadow-sm">
             <div className="flex flex-wrap gap-2">
               {/* The preview stuff aka the child component hat get yeeted here */}
-              {Children.map(children, (child, index) => {
-                return (
-                  <div className="bg-blue-500/50 p-3" key={index}>
-                    {child}
-                  </div>
-                );
-              })}
+              {children}
             </div>
           </div>
         </div>
