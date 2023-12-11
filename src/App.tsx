@@ -1,4 +1,5 @@
 import { Button } from "./components/library/Button";
+import { ContentCard } from "./components/library/Card";
 import Container from "./components/site/Container";
 import Layout from "./components/site/Layout";
 import Section from "./components/site/Section";
@@ -6,6 +7,7 @@ import Section from "./components/site/Section";
 function App() {
   return (
     <Layout>
+      {/* button */}
       <Container
         title="Button"
         description="A button is a common graphical user interface (GUI) widget that allows users to interact with a software application or website. When a user clicks or taps on a button, it triggers an action or performs a specific task, such as submitting a form, navigating to a different page, or executing a function in the underlying code."
@@ -116,15 +118,54 @@ function App() {
         </Section>
       </Container>
 
-      <Container description="Container description" title="Container title">
-        <Section description="Section description" title="Section title">
-          <div>component 1</div>
-          <div>component 2</div>
+      {/* card */}
+      <Container
+        title="Card"
+        description="A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options."
+      >
+        <Section
+          title="Simple"
+          description="Simple cards display content and can provide a distinct link that can be selected."
+        >
+          {/* Simple card */}
+          <ContentCard
+            title="Card title"
+            subtitle="card subtitle"
+            plaintext="Some quick example text to build on the card title and make up the bulk of the card's content."
+            link={{
+              url: "#",
+              text: "Card Link",
+            }}
+          ></ContentCard>
         </Section>
 
-        <Section description="Section description" title="Section title">
-          <div>component 1</div>
-          <div>component 2</div>
+        <Section
+          title="Simple with a header and footer"
+          description="Add an optional header and/or footer within a card"
+        >
+          {/* Simple card with header */}
+          <ContentCard
+            header="Featured"
+            title="Card title"
+            subtitle="card subtitle"
+            plaintext="Some quick example text to build on the card title and make up the bulk of the card's content."
+            link={{
+              url: "#",
+              text: "Card Link",
+            }}
+          ></ContentCard>
+
+          {/* Simple card with footer */}
+          <ContentCard
+            footer="Last updated 5 mins ago"
+            title="Card title"
+            subtitle="card subtitle"
+            plaintext="Some quick example text to build on the card title and make up the bulk of the card's content."
+            link={{
+              url: "#",
+              text: "Card Link",
+            }}
+          ></ContentCard>
         </Section>
       </Container>
     </Layout>
