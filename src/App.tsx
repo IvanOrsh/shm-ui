@@ -1,5 +1,6 @@
 import { SiGithub, SiYoutube } from "react-icons/si";
 
+import Container from "./components/site/Container";
 import Section from "./components/site/Section";
 
 function App() {
@@ -49,14 +50,10 @@ function App() {
       {/* Main content area */}
       <main className="p-10 sm:px-16 lg:px-44">
         <div className="mx-auto max-w-3xl space-y-20">
-          {/* Content container */}
-          <header className="space-y-2">
-            <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl">
-              Component name
-            </h1>
-            <p className="text-lg text-gray-800">Component description</p>
-          </header>
-          <div className="space-y-10 md:space-y-16">
+          <Container
+            description="Container description"
+            title="Container title"
+          >
             <Section description="Section description" title="Section title">
               <div>component 1</div>
               <div>component 2</div>
@@ -66,16 +63,12 @@ function App() {
               <div>component 1</div>
               <div>component 2</div>
             </Section>
-          </div>
+          </Container>
 
-          {/* Content container */}
-          <header className="space-y-2">
-            <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl">
-              Component name
-            </h1>
-            <p className="text-lg text-gray-800">Component description</p>
-          </header>
-          <div className="space-y-10 md:space-y-16">
+          <Container
+            description="Container description"
+            title="Container title"
+          >
             <Section description="Section description" title="Section title">
               <div>component 1</div>
               <div>component 2</div>
@@ -85,7 +78,7 @@ function App() {
               <div>component 1</div>
               <div>component 2</div>
             </Section>
-          </div>
+          </Container>
         </div>
       </main>
     </div>
