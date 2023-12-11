@@ -1,5 +1,7 @@
+import { SiNextdotjs, SiVite } from "react-icons/si";
+
 import { Button } from "./components/library/Button";
-import { ContentCard } from "./components/library/Card";
+import { BlockLinkCard, ContentCard } from "./components/library/Card";
 import Container from "./components/site/Container";
 import Layout from "./components/site/Layout";
 import Section from "./components/site/Section";
@@ -166,6 +168,21 @@ function App() {
               text: "Card Link",
             }}
           ></ContentCard>
+        </Section>
+
+        <Section
+          title="Block link"
+          description="A simple card enhanced into a selectable block link"
+        >
+          {/* Vite card */}
+          <BlockLinkCard url="https://vitejs.dev/" text="Vite">
+            <SiVite className="h-10 w-10" />
+          </BlockLinkCard>
+
+          {/* NextJS card */}
+          <BlockLinkCard url="https://nextjs.org/" text="NextJS">
+            <SiNextdotjs className="h-10 w-10" />
+          </BlockLinkCard>
         </Section>
       </Container>
     </Layout>

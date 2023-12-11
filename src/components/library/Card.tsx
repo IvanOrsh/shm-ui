@@ -76,6 +76,25 @@ export function ContentCard(props: PropsWithChildren<ContentCardProps>) {
   );
 }
 
-export function BlockLinkCard() {
-  return <div>BlockLinkCard</div>;
+type BlockLinkCardProps = {
+  url?: string;
+  text?: string;
+};
+
+export function BlockLinkCard(props: PropsWithChildren<BlockLinkCardProps>) {
+  const { url, text, children } = props;
+
+  return (
+    // eslint-disable-next-line tailwindcss/classnames-order
+    <CardContainer className="hover:bg-theme-200/50 text-gray-800 transition-colors">
+      <a
+        className="flex flex-col items-center p-6 sm:p-10"
+        href={url ? url : "#"}
+        target="_blank"
+      >
+        {children}
+        {text && <p className="mt-2 font-medium">{text}</p>}
+      </a>
+    </CardContainer>
+  );
 }
