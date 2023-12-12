@@ -2,10 +2,21 @@ import { VariantProps, cva } from "class-variance-authority";
 import { PropsWithChildren } from "react";
 import { twMerge } from "tailwind-merge";
 
-const cardContainer = cva(["rounded-xl", "border", "bg-white", "shadow-sm"], {
-  variants: {},
-  defaultVariants: {},
-});
+const cardContainer = cva(
+  [
+    "rounded-xl",
+    "border",
+    "bg-white",
+    "shadow-sm",
+    "dark:border-gray-700",
+    "dark:bg-theme-900",
+    "dark:shadow-theme-700/[.7]",
+  ],
+  {
+    variants: {},
+    defaultVariants: {},
+  }
+);
 
 export interface CardContainerProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -39,25 +50,31 @@ export function ContentCard(props: PropsWithChildren<ContentCardProps>) {
   return (
     <CardContainer>
       {header && (
-        // eslint-disable-next-line tailwindcss/classnames-order
-        <header className="bg-theme-100 rounded-t-xl border-b px-4 py-3 md:px-5 md:py-4">
-          <p className="mt-1 text-sm text-gray-500 ">{header}</p>
+        // eslint-disable-next-line tailwindcss/classnames-order, tailwindcss/no-custom-classname
+        <header className="rounded-t-xl border-b bg-theme-100 px-4 py-3 dark:border-gray-700 dark:bg-theme-900 md:px-5 md:py-4">
+          <p className="mt-1 text-sm text-gray-500">{header}</p>
         </header>
       )}
 
       <article className="flex flex-col p-4 md:p-5">
-        {title && <h3 className="text-lg font-bold text-gray-800">{title}</h3>}
+        {title && (
+          <h3 className="text-lg font-bold text-gray-800 dark:text-white">
+            {title}
+          </h3>
+        )}
         {subtitle && (
           <p className="mt-1 text-sm font-medium uppercase text-gray-500">
             {subtitle}
           </p>
         )}
-        {plaintext && <p className="mt-2 text-gray-800">{plaintext}</p>}
+        {plaintext && (
+          <p className="mt-2 text-gray-800 dark:text-zinc-400">{plaintext}</p>
+        )}
         {children}
         {link && (
           <a
             // eslint-disable-next-line tailwindcss/classnames-order
-            className="text-theme-500 hover:text-theme-600 mt-5 inline-flex items-center gap-2 text-sm font-medium"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-emerald-500 hover:text-theme-600 dark:text-emerald-400 dark:hover:text-emerald-600"
             href={link.url}
             target="_blank"
           >
@@ -67,9 +84,11 @@ export function ContentCard(props: PropsWithChildren<ContentCardProps>) {
       </article>
 
       {footer && (
-        // eslint-disable-next-line tailwindcss/classnames-order
-        <footer className="bg-theme-100 rounded-b-xl border-t px-4 py-3 md:px-5 md:py-4">
-          <p className="mt-1 text-sm text-gray-500">{footer}</p>
+        // eslint-disable-next-line tailwindcss/classnames-order, tailwindcss/no-custom-classname
+        <footer className="rounded-b-xl border-t bg-theme-100 px-4 py-3 dark:border-gray-700 dark:bg-theme-900 md:px-5 md:py-4">
+          <p className="mt-1 text-sm text-gray-500 dark:text-zinc-400">
+            {footer}
+          </p>
         </footer>
       )}
     </CardContainer>
@@ -85,8 +104,8 @@ export function BlockLinkCard(props: PropsWithChildren<BlockLinkCardProps>) {
   const { url, text, children } = props;
 
   return (
-    // eslint-disable-next-line tailwindcss/classnames-order
-    <CardContainer className="hover:bg-theme-200/50 text-gray-800 transition-colors">
+    // eslint-disable-next-line tailwindcss/classnames-order, tailwindcss/no-custom-classname
+    <CardContainer className="text-gray-800 transition-colors hover:bg-theme-200/50 dark:text-white dark:hover:bg-theme-600">
       <a
         className="flex flex-col items-center p-6 sm:p-10"
         href={url ? url : "#"}
