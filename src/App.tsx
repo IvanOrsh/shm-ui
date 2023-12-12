@@ -94,7 +94,7 @@ function App() {
           {["sm", "md", "lg", "xl"].map((size) =>
             ["primary", "secondary", "tertiary"].map((intent) => (
               <Button
-                key={size}
+                key={`${size}:${intent}`}
                 intent={intent as "primary" | "secondary" | "tertiary"}
                 btnType="icon"
                 size={size as "sm" | "md" | "lg" | "xl"}
