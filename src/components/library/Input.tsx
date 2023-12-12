@@ -13,6 +13,11 @@ const input = cva(
     "focus:border-theme-500",
     "focus:ring-theme-500",
 
+    "dark:border-gray-700",
+    "dark:bg-theme-900",
+
+    "dark:text-theme-50",
+
     "disabled:pointer-events-none",
     "disabled:opacity-50",
   ],
