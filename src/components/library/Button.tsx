@@ -25,7 +25,13 @@ const button = cva(
           "bg-theme-600",
           "text-theme-50",
 
+          "dark:bg-theme-800",
+
+          "dark:hover:border-1",
+          "dark:hover:border-theme-400",
+
           "hover:bg-theme-500",
+          "dark:hover:bg-theme-900",
           "active:bg-theme-700",
           "focus-visible:bg-theme-600",
 
@@ -41,11 +47,17 @@ const button = cva(
           "bg-theme-base",
           "text-theme-600",
 
+          "dark:bg-theme-900",
+          "dark:text-theme-base",
+
           "border-2",
           "border-theme-400",
 
           "hover:bg-theme-100",
           "hover:border-theme-700",
+          "dark:hover:bg-theme-600",
+          "dark:hover:text-theme-50",
+          "dark:hover:border-none",
 
           "active:bg-theme-200",
 
@@ -58,7 +70,11 @@ const button = cva(
           "bg-theme-base",
           "text-theme-600",
 
+          "dark:bg-theme-900",
+          "dark:text-theme-base",
+
           "hover:bg-theme-50",
+          "dark:hover:text-theme-400",
 
           "active:bg-theme-100",
 
@@ -71,7 +87,16 @@ const button = cva(
           "bg-red-500",
           "text-red-50",
 
+          "dark:border-2",
+          "dark:border-red-400",
+          "dark:bg-theme-900",
+          "dark:text-red-400",
+
           "hover:bg-red-600",
+
+          "dark:hover:bg-red-500",
+          "dark:hover:text-red-50",
+          "dark:hover:border-none",
 
           "active:bg-red-700",
 
