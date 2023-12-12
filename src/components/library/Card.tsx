@@ -50,7 +50,6 @@ export function ContentCard(props: PropsWithChildren<ContentCardProps>) {
   return (
     <CardContainer>
       {header && (
-        // eslint-disable-next-line tailwindcss/classnames-order, tailwindcss/no-custom-classname
         <header className="rounded-t-xl border-b bg-theme-100 px-4 py-3 dark:border-gray-700 dark:bg-theme-900 md:px-5 md:py-4">
           <p className="mt-1 text-sm text-gray-500">{header}</p>
         </header>
@@ -73,7 +72,6 @@ export function ContentCard(props: PropsWithChildren<ContentCardProps>) {
         {children}
         {link && (
           <a
-            // eslint-disable-next-line tailwindcss/classnames-order
             className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-emerald-500 hover:text-theme-600 dark:text-emerald-400 dark:hover:text-emerald-600"
             href={link.url}
             target="_blank"
@@ -84,7 +82,6 @@ export function ContentCard(props: PropsWithChildren<ContentCardProps>) {
       </article>
 
       {footer && (
-        // eslint-disable-next-line tailwindcss/classnames-order, tailwindcss/no-custom-classname
         <footer className="rounded-b-xl border-t bg-theme-100 px-4 py-3 dark:border-gray-700 dark:bg-theme-900 md:px-5 md:py-4">
           <p className="mt-1 text-sm text-gray-500 dark:text-zinc-400">
             {footer}
@@ -104,7 +101,6 @@ export function BlockLinkCard(props: PropsWithChildren<BlockLinkCardProps>) {
   const { url, text, children } = props;
 
   return (
-    // eslint-disable-next-line tailwindcss/classnames-order, tailwindcss/no-custom-classname
     <CardContainer className="text-gray-800 transition-colors hover:bg-theme-200/50 dark:text-white dark:hover:bg-theme-600">
       <a
         className="flex flex-col items-center p-6 sm:p-10"
