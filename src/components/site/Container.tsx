@@ -12,10 +12,12 @@ export default function Container(props: PropsWithChildren<ContainerProps>) {
     <>
       {/* Content container */}
       <header className="space-y-2">
-        <h1 className="text-2xl font-bold text-gray-800 sm:text-3xl">
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white sm:text-3xl">
           {title}
         </h1>
-        <p className="text-lg text-gray-800">{description}</p>
+        <p className="text-lg text-gray-800 dark:text-gray-400">
+          {description}
+        </p>
       </header>
       <div className="space-y-10 md:space-y-16">{children}</div>
     </>

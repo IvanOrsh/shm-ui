@@ -6,7 +6,7 @@ export default function Layout(props: PropsWithChildren) {
   const { children } = props;
 
   return (
-    <div className="relative min-h-screen bg-white">
+    <div className="relative min-h-screen bg-white dark:bg-zinc-800">
       <Navbar />
 
       {/* Main content area */}
