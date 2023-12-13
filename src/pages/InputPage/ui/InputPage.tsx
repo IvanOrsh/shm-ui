@@ -13,7 +13,7 @@ export default function InputPage() {
         <Input type="text" placeholder="Basic input: start typing here" />
 
         {/* Disabled input */}
-        <Input type="text" disabled placeholder="Disabled input" />
+        <Input type="text" disabled placeholder="Disabled input 🥺" />
       </Section>
 
       <Section title="Label" description="Input with a label.">
