@@ -7,6 +7,7 @@ import { ButtonPage } from "./pages/ButtonPage";
 import { CardPage } from "./pages/CardPage";
 import { HomePage } from "./pages/HomePage";
 import { InputPage } from "./pages/InputPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function AppRoutes() {
         <Route path="button" element={<ButtonPage />} />
         <Route path="card" element={<CardPage />} />
         <Route path="input" element={<InputPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
