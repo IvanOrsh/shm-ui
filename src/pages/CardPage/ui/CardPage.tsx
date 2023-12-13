@@ -10,6 +10,7 @@ export default function CardPage() {
       description="A card is a flexible and extensible content container. It includes options for headers and footers, a wide variety of content, contextual background colors, and powerful display options."
     >
       <Section
+        id="card-simple"
         title="Simple"
         description="Simple cards display content and can provide a distinct link that can be selected."
       >
@@ -26,6 +27,7 @@ export default function CardPage() {
       </Section>
 
       <Section
+        id="card-header-footer"
         title="Simple with a header and footer"
         description="Add an optional header and/or footer within a card/"
       >
@@ -55,6 +57,7 @@ export default function CardPage() {
       </Section>
 
       <Section
+        id="card-block-link"
         title="Block link"
         description="A simple card enhanced into a selectable block link"
       >

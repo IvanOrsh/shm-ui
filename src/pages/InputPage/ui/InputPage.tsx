@@ -8,7 +8,11 @@ export default function InputPage() {
       title="Inputs"
       description="An input is a widget that allows users to provide data or specify options, which can be submitted as part of a form or used to interact with an manipulate content on a web page."
     >
-      <Section title="Basic" description="Basic inputs with a placeholder.">
+      <Section
+        id="input-basic"
+        title="Basic"
+        description="Basic inputs with a placeholder."
+      >
         {/* Basic input */}
         <Input type="text" placeholder="Basic input: start typing here" />
 
@@ -16,12 +20,16 @@ export default function InputPage() {
         <Input type="text" disabled placeholder="Disabled input 🥺" />
       </Section>
 
-      <Section title="Label" description="Input with a label.">
+      <Section id="input-label" title="Label" description="Input with a label.">
         {/* Basic input with label */}
         <Input type="email" label="Email" placeholder="you@site.com" />
       </Section>
 
-      <Section title="Description" description="Input with a description.">
+      <Section
+        id="input-description"
+        title="Description"
+        description="Input with a description."
+      >
         {/* Basic input with description*/}
         <Input
           type="password"

@@ -9,6 +9,7 @@ export default function ButtonPage() {
       description="A button is a common graphical user interface (GUI) widget that allows users to interact with a software application or website. When a user clicks or taps on a button, it triggers an action or performs a specific task, such as submitting a form, navigating to a different page, or executing a function in the underlying code."
     >
       <Section
+        id="button-primary"
         title="Primary"
         description="Primary actions should be obvious. Solid, high contrast background colors work great here."
       >
@@ -27,6 +28,7 @@ export default function ButtonPage() {
       </Section>
 
       <Section
+        id="button-secondary"
         title="Secondary"
         description="Secondary actions actions should be clear but not prominent. Outline styles or lower contrast background colors are great options."
       >
@@ -45,6 +47,7 @@ export default function ButtonPage() {
       </Section>
 
       <Section
+        id="button-tertiary"
         title="Tertiary"
         description="Tertiary actions should be discoverable but unobtrusive. Styling these actions like links is usually the best approach"
       >
@@ -63,6 +66,7 @@ export default function ButtonPage() {
       </Section>
 
       <Section
+        id="button-destructive"
         title="Destructive"
         description="Destructive actions typically result in the removal of an item, and may result in an undesirable consequence."
       >
@@ -81,6 +85,7 @@ export default function ButtonPage() {
       </Section>
 
       <Section
+        id="button-icon"
         title="Icon Buttons"
         description="Icon buttons are great for actions that require an icon, such as a back or forward button."
       >
