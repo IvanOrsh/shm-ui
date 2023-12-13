@@ -1,5 +1,10 @@
 import { VariantProps, cva } from "class-variance-authority";
-import { PropsWithChildren } from "react";
+import {
+  ForwardRefExoticComponent,
+  PropsWithChildren,
+  RefAttributes,
+} from "react";
+import { LinkProps } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 
 const cardContainer = cva(
@@ -13,21 +18,37 @@ const cardContainer = cva(
     "dark:shadow-theme-700/[.7]",
   ],
   {
-    variants: {},
-    defaultVariants: {},
+    variants: {
+      widthLimit: {
+        xs: "max-w-xs",
+        sm: "max-w-sm",
+        md: "max-w-md",
+        lg: "max-w-lg",
+        xl: "max-w-xl",
+        full: "max-w-full",
+      },
+    },
+    defaultVariants: {
+      widthLimit: "xs",
+    },
   }
 );
 
 export interface CardContainerProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof cardContainer> {}
+    VariantProps<typeof cardContainer> {
+  widthLimit?: "xs" | "sm" | "md" | "lg" | "xl" | "full";
+}
 
 export function CardContainer(props: CardContainerProps) {
-  const { className, children, ...rest } = props;
+  const { className, widthLimit, children, ...rest } = props;
 
   return (
-    <div className="w-full max-w-xs" {...rest}>
-      <div className={twMerge(cardContainer({ className }))}>{children}</div>
+    <div
+      className={twMerge(cardContainer({ widthLimit, className }))}
+      {...rest}
+    >
+      {children}
     </div>
   );
 }
@@ -42,13 +63,23 @@ type ContentCardProps = {
     url: string;
     text: string;
   };
+  widthLimit?: "xs" | "sm" | "md" | "lg" | "xl" | "full";
 };
 
 export function ContentCard(props: PropsWithChildren<ContentCardProps>) {
-  const { header, footer, title, subtitle, plaintext, link, children } = props;
+  const {
+    header,
+    footer,
+    title,
+    subtitle,
+    plaintext,
+    link,
+    widthLimit,
+    children,
+  } = props;
 
   return (
-    <CardContainer>
+    <CardContainer widthLimit={widthLimit}>
       {header && (
         <header className="rounded-t-xl border-b bg-theme-100 px-4 py-3 dark:border-gray-700 dark:bg-theme-900 md:px-5 md:py-4">
           <p className="mt-1 text-sm text-gray-500">{header}</p>
@@ -95,21 +126,55 @@ export function ContentCard(props: PropsWithChildren<ContentCardProps>) {
 type BlockLinkCardProps = {
   url?: string;
   text?: string;
+  widthLimit?: "xs" | "sm" | "md" | "lg" | "xl" | "full";
+  CustomLinkComponent?:
+    | ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>>
+    | React.ComponentType<React.HTMLAttributes<HTMLAnchorElement>>;
+  customLinkProps?: object;
 };
 
 export function BlockLinkCard(props: PropsWithChildren<BlockLinkCardProps>) {
-  const { url, text, children } = props;
+  const {
+    url,
+    text,
+    widthLimit,
+    CustomLinkComponent,
+    customLinkProps,
+    children,
+  } = props;
+
+  const linkClasses: string = "flex flex-col items-center p-6 sm:p-10";
+
+  const linkContent = (
+    <>
+      {children}
+      {text && <p className="mt-2 font-medium">{text}</p>}
+    </>
+  );
 
   return (
-    <CardContainer className="text-gray-800 transition-colors hover:bg-theme-200/50 dark:text-white dark:hover:bg-theme-600">
-      <a
-        className="flex flex-col items-center p-6 sm:p-10"
-        href={url ? url : "#"}
-        target="_blank"
-      >
-        {children}
-        {text && <p className="mt-2 font-medium">{text}</p>}
-      </a>
+    <CardContainer
+      widthLimit={widthLimit}
+      className="min-w-[240px] text-gray-800 transition-colors hover:bg-theme-200/50 dark:text-white dark:hover:bg-theme-600"
+    >
+      {CustomLinkComponent ? (
+        <CustomLinkComponent
+          to={url ? url : "#"}
+          className={linkClasses}
+          {...customLinkProps}
+        >
+          {linkContent}
+        </CustomLinkComponent>
+      ) : (
+        <a
+          className={linkClasses}
+          href={url ? url : "#"}
+          target="_blank"
+          {...(customLinkProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+        >
+          {linkContent}
+        </a>
+      )}
     </CardContainer>
   );
 }
