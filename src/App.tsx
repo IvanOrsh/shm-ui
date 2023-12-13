@@ -1,23 +1,40 @@
 import { Suspense } from "react";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+
 import Layout from "./components/site/Layout";
+import Spinner from "./components/site/Spinner";
 import { ButtonPage } from "./pages/ButtonPage";
 import { CardPage } from "./pages/CardPage";
+import { HomePage } from "./pages/HomePage";
 import { InputPage } from "./pages/InputPage";
 
 function App() {
   return (
-    <Layout>
-      <Suspense fallback={<div>Loading...</div>}>
-        {/* button */}
-        <ButtonPage />
-
-        {/* card */}
-        <CardPage />
-
-        {/* Inputs */}
-        <InputPage />
+    <BrowserRouter>
+      <Suspense fallback={<Spinner />}>
+        <AppRoutes />
       </Suspense>
-    </Layout>
+    </BrowserRouter>
+  );
+}
+
+function AppRoutes() {
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <Outlet />
+          </Layout>
+        }
+      >
+        <Route index element={<HomePage />} />
+        <Route path="button" element={<ButtonPage />} />
+        <Route path="card" element={<CardPage />} />
+        <Route path="input" element={<InputPage />} />
+      </Route>
+    </Routes>
   );
 }
 
