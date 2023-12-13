@@ -1,4 +1,4 @@
-import { RxButton } from "react-icons/rx";
+import { RxButton, RxIdCard, RxInput } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 import { BlockLinkCard } from "../../../components/library/Card";
@@ -26,7 +26,7 @@ export default function HomePage() {
           text="Card"
           widthLimit="full"
         >
-          <RxButton className="h-10 w-10" />
+          <RxIdCard className="h-10 w-10" />
         </BlockLinkCard>
 
         <BlockLinkCard
@@ -35,7 +35,7 @@ export default function HomePage() {
           text="Input"
           widthLimit="full"
         >
-          <RxButton className="h-10 w-10" />
+          <RxInput className="h-10 w-10" />
         </BlockLinkCard>
       </div>
     </Container>
