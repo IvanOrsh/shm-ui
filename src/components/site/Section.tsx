@@ -1,21 +1,22 @@
 import { PropsWithChildren } from "react";
 
+import Title from "./Title";
+
 type SectionProps = {
+  id?: string;
   title: string;
   description: string;
 };
 
 export default function Section(props: PropsWithChildren<SectionProps>) {
-  const { description, title, children } = props;
+  const { id, description, title, children } = props;
 
   return (
     <>
       {/* Content section */}
       <div>
         {/* Section heading */}
-        <h2 className="text-lg font-bold text-gray-800 dark:text-white">
-          {title}
-        </h2>
+        <Title id={id || title} title={title} />
 
         {/* Section description  */}
         <p className="mt-1 text-gray-600 dark:text-zinc-400">{description}</p>
