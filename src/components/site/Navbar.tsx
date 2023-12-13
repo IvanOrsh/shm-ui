@@ -1,5 +1,6 @@
 import { HiMoon, HiSun } from "react-icons/hi";
 import { SiGithub, SiYoutube } from "react-icons/si";
+import { Link } from "react-router-dom";
 
 import { useTheme } from "./useTheme";
 
@@ -27,12 +28,12 @@ export default function Navbar() {
         <div className="mx-auto w-full max-w-3xl space-y-20">
           <div className="flex justify-between">
             <div className="flex flex-1 items-center justify-start">
-              <a
-                href="/"
+              <Link
+                to="/"
                 className="flex h-10 items-center justify-center text-lg font-bold text-gray-800 dark:text-white"
               >
                 shm-ui
-              </a>
+              </Link>
             </div>
             <div className="flex flex-1 items-center justify-end">
               <nav>
