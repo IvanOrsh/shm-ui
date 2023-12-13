@@ -64,7 +64,7 @@ export default function CardPage() {
         </BlockLinkCard>
 
         {/* NextJS card */}
-        <BlockLinkCard url="https://nextjs.org/" text="NextJS">
+        <BlockLinkCard url="https://nextjs.org/" text="NextJS" widthLimit="md">
           <SiNextdotjs className="h-10 w-10" />
         </BlockLinkCard>
       </Section>
