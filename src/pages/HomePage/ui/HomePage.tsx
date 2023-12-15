@@ -1,4 +1,4 @@
-import { RxButton, RxIdCard, RxInput } from "react-icons/rx";
+import { RxBoxModel, RxButton, RxIdCard, RxInput } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
 import { BlockLinkCard } from "../../../components/library/Card";
@@ -36,6 +36,15 @@ export default function HomePage() {
           widthLimit="full"
         >
           <RxInput className="h-10 w-10" />
+        </BlockLinkCard>
+
+        <BlockLinkCard
+          CustomLinkComponent={Link}
+          url="dialog"
+          text="Dialog"
+          widthLimit="full"
+        >
+          <RxBoxModel className="h-10 w-10" />
         </BlockLinkCard>
       </div>
     </Container>
